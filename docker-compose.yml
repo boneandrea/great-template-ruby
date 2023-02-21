@@ -15,13 +15,11 @@ services:
   db:
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: dev_db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: pass
       MYSQL_ROOT_PASSWORD: pass
       TZ: 'Asia/Tokyo'
     volumes:
       - ./volume:/var/lib/mysql
+      - ./docker/db:/docker-entrypoint-initdb.d
     ports:
       - 3306:3306
 
