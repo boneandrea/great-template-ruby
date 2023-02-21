@@ -24,3 +24,8 @@ services:
       - ./volume:/var/lib/mysql
     ports:
       - 3306:3306
+
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "${MAIL_PORT:-8025}:8025"
