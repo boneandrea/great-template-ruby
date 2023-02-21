@@ -31,3 +31,5 @@
 /config/master.key
 /.env
 /volume/
+/bin/rspec
+/bin/spring
