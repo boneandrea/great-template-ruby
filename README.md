@@ -1,27 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# requirements
+docker-compose
 
-Things you may want to cover:
+# 起動
+```
+git clone __WORKDIR__
+cd __WORKDIR__
+docker compose up
+docker compose run --rm web rails db:migrate
+docker compose run --rm web rails db:migrate RAILS_ENV=test
+```
+http://localhost:3000 で確認する
 
-* Ruby version
+ポートを変更する場合は`.env`に
+```
+WEB_PORT=3005
+```
+と書く
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-`docker-compose up` だとCtrl-Cで止まらないかもしれない
+注意:  
+ホストOSの問題だと思われるが、`docker-compose up` だとCtrl-Cで止まらないかもしれない.  
 `docker compose up` だと止まった
