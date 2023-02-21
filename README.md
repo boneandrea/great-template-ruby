@@ -1,4 +1,6 @@
-# README
+# What
+
+Rails7-Ruby3-MySQL8 でのtemplate
 
 # requirements
 docker-compose
