@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    restart: always
+    build:
+      context: .
+    volumes:
+      - .:/app
+    command: rails s -b 0.0.0.0 -p 3000
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - ./db:/var/lib/mysql
+    ports:
+      - 3306:3306
