@@ -23,3 +23,21 @@ WEB_PORT=3005
 注意:  
 ホストOSの問題だと思われるが、`docker-compose up` だとCtrl-Cで止まらないかもしれない.  
 `docker compose up` だと止まった
+
+
+# テスト
+
+/bin/rake
+/bin/rspec
+/bin/spring
+を作る
+
+```
+docker compose run --rm web bundle exec spring binstub --all
+```
+
+実行
+```
+docker compose run --rm web bin/rspec
+```
+
